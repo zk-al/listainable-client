@@ -95,7 +95,7 @@ List the functionality that your app will include. These can be written as user 
 
 ### Mockups
 
-![](./assets/README/listainable-mockup-mobile.png)
+![](./assets/README/listainbale-mockup-mobile.png)
 
 ### Data
 
