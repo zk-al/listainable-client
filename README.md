@@ -106,7 +106,7 @@ List the functionality that your app will include. These can be written as user 
 - Each user will be able to one list which contains the table id, productname, ecoScore and quantity
   - Users will be able to add, delete, and edit that quantity of items on the list
 
-![](./assets/README/listainable-db.png)
+![](./assets/README/listainbale-db.png)
 
 ### Product Endpoints
 
@@ -128,6 +128,7 @@ Example response:
 Parameters:
 
 - product-name
+- certifications: labels and certification like organic, rainforest alliance, no gluten, ect.
 - ingrdients: an array of strings
 - category: string
 - ecoscore: string - a letter grade determining how environmentally friendly a product is
@@ -139,10 +140,14 @@ Example Response:
 {
     "product-name": "Nutella",
     "product-image": "image-url",
+    "certifications": [
+      "No gluten",
+      "Vegetarian",
+    ]
     "ingredients": [
-    "ingredient1",
-    "ingredient2",
-    "ingredient3"
+      "ingredient1",
+      "ingredient2",
+      "ingredient3"
     ],
     "category": "Condiment"
     "eco-score": "c",
@@ -152,21 +157,18 @@ Example Response:
 
 **GET /product/category**
 
-- Get products of a certain category
+- Get products of a certain category to display on **home page**
 
 Parameters:
 
 - category
 
+Example Response:
+
 ```
 {
     "product-name": "Nutella",
     "product-image": "image-url",
-    "ingredients": [
-    "ingredient1",
-    "ingredient2",
-    "ingredient3"
-    ],
     "category": "Condiment"
     "eco-score": "c",
     "nutri-score": "d",
@@ -175,7 +177,7 @@ Parameters:
 
 **GET /search**
 
-- Get item based on search query
+- Get item based on search query to show on **search page**
 
 Parameters:
 
@@ -191,10 +193,14 @@ Example Result:
     {
         "product-name": "Nutella",
         "product-image": "image-url",
+        "certifications": [
+          "No gluten",
+          "Vegetarian",
+      ],
         "ingredients": [
-        "ingredient1",
-        "ingredient2",
-        "ingredient3"
+          "ingredient1",
+          "ingredient2",
+          "ingredient3"
         ],
         "category": "Condiment"
         "eco-score": "c",
@@ -203,6 +209,10 @@ Example Result:
     {
         "product-name": "Banana",
         "product-image": "image-url",
+        "certifications": [
+          "No gluten",
+          "Vegan,
+      ],
         "ingredients": "ingredient1"
         "category": "Fruit"
         "eco-score": "a",
