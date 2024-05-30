@@ -71,6 +71,7 @@ List the functionality that your app will include. These can be written as user 
   - react-router
   - axios
   - react-multi-carousel
+  - fuse.js
 - Server libraries:
   - knex
   - express
@@ -173,53 +174,6 @@ Example Response:
     "eco-score": "c",
     "nutri-score": "d",
 }
-```
-
-**GET /search**
-
-- Get item based on search query to show on **search page**
-
-Parameters:
-
-- q: The search query string
-- limit: the maximum number of results to return
-- sort: to sort by ecoscore
-- order: order of sorting ('asc') or ('desc')
-
-Example Result:
-
-```
-[
-    {
-        "product-name": "Nutella",
-        "product-image": "image-url",
-        "certifications": [
-          "No gluten",
-          "Vegetarian",
-      ],
-        "ingredients": [
-          "ingredient1",
-          "ingredient2",
-          "ingredient3"
-        ],
-        "category": "Condiment"
-        "eco-score": "c",
-        "nutri-score": "d",
-    },
-    {
-        "product-name": "Banana",
-        "product-image": "image-url",
-        "certifications": [
-          "No gluten",
-          "Vegan,
-      ],
-        "ingredients": "ingredient1"
-        "category": "Fruit"
-        "eco-score": "a",
-        "nutri-score": "a",
-    }
-]
-
 ```
 
 ### List Endpoints
@@ -355,8 +309,7 @@ Scope your project as a sprint. Break down the tasks that will need to be comple
 
 - Feature: Search
 
-  - Create GET /search request
-  - Implement search page and function
+  - Implement search function via fuse.js
 
 - Feature: List page
 
