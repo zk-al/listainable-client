@@ -1,0 +1,60 @@
+import "./HomePage.scss";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+const PORT = process.env.PORT || 8080;
+const baseUrl = `http://localhost:${PORT}`;
+
+function HomePage() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const response = await axios.get(`${baseUrl}/products`);
+        setProducts(response.data);
+      } catch (error) {
+        console.error("Error fetching products: ", error);
+      }
+    };
+    getProducts();
+    console.log(products);
+  }, []);
+  return (
+    <>
+      <h2>Plant-Based Foods</h2>
+      {products
+        .filter((product) => product.category === "Plant-Based Foods")
+        .map((product) => (
+          <section key={product.id}>
+            <div>
+              <p>Image: {product.product_image}</p>
+              <h3>{product.product_name}</h3>
+            </div>
+          </section>
+        ))}
+      {products
+        .filter((product) => product.category === "Frozen Foods")
+        .map((product) => (
+          <section key={product.id}>
+            <div>
+              <p>Image: {product.product_image}</p>
+              <h3>{product.product_name}</h3>
+            </div>
+          </section>
+        ))}
+      {products
+        .filter((product) => product.category === "Snacks")
+        .map((product) => (
+          <section key={product.id}>
+            <div>
+              <p>Image: {product.product_image}</p>
+              <h3>{product.product_name}</h3>
+            </div>
+          </section>
+        ))}
+    </>
+  );
+}
+
+export default HomePage;

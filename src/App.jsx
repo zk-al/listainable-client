@@ -2,20 +2,20 @@ import "./App.scss";
 import { Routes, Route, Link } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-// import HomePage from "./pages/HomePage/HomePage";
+import HomePage from "./pages/HomePage/HomePage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 // import ListPage from "./pages/ListPage/ListPage";
 
 function App() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Routes>
-        {/* <Route path="/" element={<HomePage />} /> */}
+        <Route path="/" element={<HomePage />} />
         <Route path="/product/:id" element={<ProductPage />} />
         {/* <Route path="/list" element={<ListPage />} /> */}
       </Routes>
-      <div className="Login">
+      <div className="login">
         <form action="submit">
           <label>
             Username
@@ -48,7 +48,7 @@ function App() {
           <button>Sign Up</button>
         </form>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
