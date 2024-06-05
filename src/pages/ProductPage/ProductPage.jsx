@@ -26,9 +26,35 @@ function ProductPage() {
   }, []);
 
   return (
-    <>
-      <h1>TEST</h1>
-    </>
+    <section>
+      <h1>Product Name</h1>
+      <img src="#" alt="Product Iamge" />
+      <div>
+        <h2>Description</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <div>
+        <h2>Certifications and Labels</h2>
+        <ul>
+          <li>Cert 1</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Ingredients</h2>
+        <ul>
+          <li>Ingrent</li>
+        </ul>
+      </div>
+      <div>
+        <p>Eco-Score Rating</p>
+        <p>Nutri Score Rating</p>
+      </div>
+    </section>
   );
 }
 
