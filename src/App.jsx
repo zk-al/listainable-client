@@ -1,5 +1,5 @@
 import "./App.scss";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 // import HomePage from "./pages/HomePage/HomePage";
@@ -15,7 +15,39 @@ function App() {
         {/* <Route path="/product/:id" element={<ProductPage />} /> */}
         {/* <Route path="/list" element={<ListPage />} /> */}
       </Routes>
-      <div className="Login"></div>
+      <div className="Login">
+        <form action="submit">
+          <label>
+            Username
+            <input type="text" />
+          </label>
+          <label>
+            Password
+            <input type="text" />
+          </label>
+          {/* This can just link to the home page until the login actually works */}
+          <button>Login</button>
+        </form>
+
+        {/* This btn should show the sign up form below */}
+        <a href="#">Sign Up</a>
+        <form action="submit">
+          <label>
+            Email
+            <input type="text" />
+          </label>
+          <label>
+            Password
+            <input type="text" />
+          </label>
+          <label>
+            Confirm Password
+            <input type="text" />
+          </label>
+          {/* Alert sign up successful + check email + load login form */}
+          <button>Sign Up</button>
+        </form>
+      </div>
       <Footer />
     </>
   );
