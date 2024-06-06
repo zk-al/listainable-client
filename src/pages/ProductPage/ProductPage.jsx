@@ -27,7 +27,7 @@ function ProductPage() {
 
   return (
     <section>
-      <h1>Product Name</h1>
+      <h1>{product.product_name}</h1>
       <img src="#" alt="Product Iamge" />
       <div>
         <h2>Description</h2>
@@ -40,19 +40,27 @@ function ProductPage() {
       </div>
       <div>
         <h2>Certifications and Labels</h2>
+        {/* TODO:
+            1. Turn certifications into array of strings
+            2. .map through data to populate list 
+        */}
         <ul>
-          <li>Cert 1</li>
+          <li>{product.certifications}</li>
         </ul>
       </div>
       <div>
         <h2>Ingredients</h2>
+        {/* TODO:
+            1. Turn ingredients into array of strings
+            2. .map through data to populate list 
+        */}
         <ul>
-          <li>Ingrent</li>
+          <li>{product.ingredients}</li>
         </ul>
       </div>
       <div>
-        <p>Eco-Score Rating</p>
-        <p>Nutri Score Rating</p>
+        <p>Eco-Score Rating {product.eco_score}</p>
+        <p>Nutri Score Rating {product.nutri_score}</p>
       </div>
     </section>
   );
