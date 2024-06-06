@@ -5,9 +5,6 @@ import "./ListPage.scss";
 const PORT = process.env.PORT || 8080;
 const baseUrl = `http://localhost:${PORT}`;
 
-//TODO:
-// 5. Add average eco score - find a way to associate numbers 1-5 with A-E so that I can calculate average with number then output letter
-
 function ListPage() {
   const [userList, setUserList] = useState([]);
   const [averageScore, setAverageScore] = useState(null);
