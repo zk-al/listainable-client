@@ -1,6 +1,5 @@
 import "./SearchBar.scss";
 import { useState } from "react";
-import axios from "axios";
 
 function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -20,3 +19,5 @@ function SearchBar() {
     </>
   );
 }
+
+export default SearchBar;
