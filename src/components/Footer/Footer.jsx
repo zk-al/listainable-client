@@ -1,6 +1,6 @@
 import "./Footer.scss";
 
-function Footer() {
+function Footer({ handleLogoutSubmit }) {
   return (
     <footer>
       <ul>
@@ -11,7 +11,7 @@ function Footer() {
           <img src="#" alt="List Icon" />
         </li>
         <li>
-          <img src="#" alt="Login Icon" />
+          <img onClick={handleLogoutSubmit} src="#" alt="Login Icon" />
         </li>
       </ul>
       <div>
