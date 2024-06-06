@@ -1,8 +1,17 @@
 import "./Login.scss";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Login({ loginVisible, handleLoginSubmit }) {
+function Login({ loginVisible, setLoginVisible }) {
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    console.log(e.target.username);
+    if (
+      e.target.username.value === "zack" &&
+      e.target.password.value === "password"
+    ) {
+      setLoginVisible(false);
+    }
+  };
   return (
     <>
       {loginVisible && (
@@ -10,11 +19,11 @@ function Login({ loginVisible, handleLoginSubmit }) {
           <form action="submit" onSubmit={handleLoginSubmit}>
             <label>
               Username
-              <input type="text" />
+              <input type="text" name="username" />
             </label>
             <label>
               Password
-              <input type="text" />
+              <input type="password" name="password" />
             </label>
             {/* This can just link to the home page until the login actually works */}
             <button type="submit">Login</button>

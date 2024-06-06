@@ -12,32 +12,17 @@ import ListPage from "./pages/ListPage/ListPage";
 function App() {
   const [loginVisible, setLoginVisible] = useState(true);
 
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    setLoginVisible(false);
-  };
-
-  const handleLogoutSubmit = (e) => {
-    e.preventDefault();
-    setLoginVisible(true);
-  };
-
   return (
     <>
       {/* <Header /> */}
-      {
-        <Login
-          handleLoginSubmit={handleLoginSubmit}
-          loginVisible={loginVisible}
-        />
-      }
+      {<Login loginVisible={loginVisible} setLoginVisible={setLoginVisible} />}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/list" element={<ListPage />} />
       </Routes>
-      <Footer handleLogoutSubmit={handleLogoutSubmit} />
+      <Footer loginVisible={loginVisible} setLoginVisible={setLoginVisible} />
     </>
   );
 }

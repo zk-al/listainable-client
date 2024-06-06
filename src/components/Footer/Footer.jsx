@@ -1,6 +1,11 @@
 import "./Footer.scss";
 
-function Footer({ handleLogoutSubmit }) {
+function Footer({ loginVisible, setLoginVisible }) {
+  const handleLogoutSubmit = (e) => {
+    e.preventDefault();
+    setLoginVisible(true);
+  };
+
   return (
     <footer>
       <ul>
