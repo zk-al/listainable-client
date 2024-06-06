@@ -2,6 +2,7 @@ import "./App.scss";
 import { Routes, Route, Link } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import SignupPage from "./pages/SignupPage/SignupPage";
 import HomePage from "./pages/HomePage/HomePage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import ListPage from "./pages/ListPage/ListPage";
@@ -12,6 +13,7 @@ function App() {
       {/* <Header /> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/signup" element={<SignupPage />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/list" element={<ListPage />} />
       </Routes>
@@ -31,22 +33,6 @@ function App() {
 
         {/* This btn should show the sign up form below */}
         <a href="#">Sign Up</a>
-        <form action="submit">
-          <label>
-            Email
-            <input type="text" />
-          </label>
-          <label>
-            Password
-            <input type="text" />
-          </label>
-          <label>
-            Confirm Password
-            <input type="text" />
-          </label>
-          {/* Alert sign up successful + check email + load login form */}
-          <button>Sign Up</button>
-        </form>
       </div>
       {/* <Footer /> */}
     </>
