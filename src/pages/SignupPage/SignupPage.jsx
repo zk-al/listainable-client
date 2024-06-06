@@ -18,13 +18,12 @@ function SignupPage() {
       </label>
       <label>
         Password
-        <input type="text" />
+        <input type="password" />
       </label>
       <label>
         Confirm Password
-        <input type="text" />
+        <input type="password" />
       </label>
-      {/* Alert sign up successful + check email + load login form */}
       <button type="submit">Sign Up</button>
     </form>
   );
