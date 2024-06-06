@@ -1,5 +1,4 @@
 import "./SearchBar.scss";
-import Fuse from "fuse.js";
 import { useState } from "react";
 import axios from "axios";
 
