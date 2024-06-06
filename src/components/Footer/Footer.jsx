@@ -1,6 +1,11 @@
 import "./Footer.scss";
 
-function Footer() {
+function Footer({ loginVisible, setLoginVisible }) {
+  const handleLogoutSubmit = (e) => {
+    e.preventDefault();
+    setLoginVisible(true);
+  };
+
   return (
     <footer>
       <ul>
@@ -11,7 +16,7 @@ function Footer() {
           <img src="#" alt="List Icon" />
         </li>
         <li>
-          <img src="#" alt="Login Icon" />
+          <img onClick={handleLogoutSubmit} src="#" alt="Login Icon" />
         </li>
       </ul>
       <div>
