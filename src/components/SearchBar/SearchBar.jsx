@@ -17,7 +17,7 @@ function SearchBar() {
   };
 
   const navigateToSearchResults = () => {
-    navigate(`/search-results/?query=${searchQuery}`);
+    navigate(`/search-results/${searchQuery}`);
   };
 
   return (

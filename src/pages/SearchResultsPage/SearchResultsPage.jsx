@@ -8,17 +8,20 @@ const baseUrl = `http://localhost:${PORT}`;
 
 function SearchResultsPage() {
   const params = useParams();
-  const query = params.id;
+  const query = params.query;
 
-  const [searchResult, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
-    const getSearchResults = async (query) => {
-      const response = await axios.get(`${baseUrl}/search?query=${query}`);
-      setSearchResults(response.data);
-    };
-    getSearchResults(query);
-    console.log(searchResult);
+    try {
+      const getSearchResults = async (query) => {
+        const response = await axios.get(`${baseUrl}/search?query=${query}`);
+        setSearchResults(response.data);
+      };
+      getSearchResults(query);
+    } catch (error) {
+      console.error("Error fetching search data: ", error);
+    }
   }, [query]);
 
   return (

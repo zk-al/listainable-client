@@ -16,7 +16,7 @@ function App() {
   const showLogin = location.pathname !== "/signup";
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       {showLogin && (
         <Login loginVisible={loginVisible} setLoginVisible={setLoginVisible} />
       )}
