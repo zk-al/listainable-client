@@ -27,10 +27,12 @@ function SearchResultsPage() {
   return (
     <section>
       {/* map through results and populate + add to list icon */}
-      <div>
-        <p>Image</p>
-        <h3>Product Name</h3>
-      </div>
+      {searchResults.map((product) => (
+        <div>
+          <p>{product.product_image}</p>
+          <h3>{product.product_name}</h3>
+        </div>
+      ))}
     </section>
   );
 }
