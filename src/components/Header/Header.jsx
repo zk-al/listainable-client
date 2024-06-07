@@ -1,11 +1,12 @@
 import "./Header.scss";
+import SearchBar from "../SearchBar/SearchBar";
 
 function Header() {
   return (
     <header>
       <a href="#">Back Arrow</a>
       <img src="#" alt="Logo" />
-      <input type="search" name="search" id="search" />
+      <SearchBar />
       <nav>
         <ul>
           <li>
