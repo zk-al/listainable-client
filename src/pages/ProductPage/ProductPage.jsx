@@ -23,39 +23,27 @@ function ProductPage() {
       }
     };
     getProduct(selectedProduct);
+    console.log(product);
   }, []);
 
   return (
     <section>
       <h1>{product.product_name}</h1>
-      <img src="#" alt="Product Iamge" />
-      <div>
-        <h2>Description</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
-      </div>
+      <img src="product_image" alt="Product Image" />
       <div>
         <h2>Certifications and Labels</h2>
-        {/* TODO:
-            1. Turn certifications into array of strings
-            2. .map through data to populate list 
-        */}
         <ul>
-          <li>{product.certifications}</li>
+          {product.certifications.map((cert) => (
+            <li>{cert}</li>
+          ))}
         </ul>
       </div>
       <div>
         <h2>Ingredients</h2>
-        {/* TODO:
-            1. Turn ingredients into array of strings
-            2. .map through data to populate list 
-        */}
         <ul>
-          <li>{product.ingredients}</li>
+          {product.ingredients.map((ingredient) => (
+            <li>{ingredient}</li>
+          ))}
         </ul>
       </div>
       <div>
