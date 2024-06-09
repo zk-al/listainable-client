@@ -1,0 +1,22 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.header {
+    @include flex(space-between);
+    padding: $m-padding;
+    background-color: $s-dark;
+
+    &__logo-wrap {
+        @include flex();
+        gap: $m-padding;
+    }
+
+    &__arrow {
+        width: 1.5rem;
+    }
+
+    &__list {
+        @include flex();
+        gap: $m-padding;
+    }
+}

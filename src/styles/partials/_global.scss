@@ -11,19 +11,19 @@
 
 @font-face {
     font-family: "Petrona";
-    src: url(../../../assets/fonts/Petrona-Regular.woff) format(woff);
+    src: url(../../assets/fonts/Petrona-Regular.woff) format(woff);
     font-weight: 400;
 }
 
 @font-face {
     font-family: "Petrona";
-    src: url(../../../assets/fonts/Petrona-SemiBold.woff) format(woff);
+    src: url(../../assets/fonts/Petrona-SemiBold.woff) format(woff);
     font-weight: 600;
 }
 
 @font-face {
     font-family: "Petrona";
-    src: url(../../../assets/fonts/Petrona-Bold.woff) format(woff);
+    src: url(../../assets/fonts/Petrona-Bold.woff) format(woff);
     font-weight: 700;
 }
 
@@ -105,6 +105,10 @@ a {
 
 img {
     max-width: 100%;
+}
+
+.icon {
+    width: 1.5rem;
 }
 
 address {
