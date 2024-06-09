@@ -19,32 +19,34 @@ function Header({ loginVisible, setLoginVisible }) {
 
   return (
     <header className="header">
-      <div className="header__logo-wrap">
-        {location.pathname !== "/" && (
-          <img
-            className="header__arrow icon"
-            onClick={goBack}
-            src={backArrow}
-            alt="Back arrow"
-          />
-        )}
-        <h1 className="logo">Listainable</h1>
-      </div>
-      <SearchBar />
-      <nav>
-        <ul className="header__list">
-          <li>
-            <Link to="/list">
-              <img className="icon" src={listIcon} alt="List Icon" />
-            </Link>
-          </li>
-          {loginVisible ? null : (
-            <li onClick={handleLogin}>
-              <img className="icon" src={logoutIcon} alt="Login Icon" />
-            </li>
+      <div className="header__wrap">
+        <div className="header__logo-wrap">
+          {location.pathname !== "/" && (
+            <img
+              className="header__arrow icon"
+              onClick={goBack}
+              src={backArrow}
+              alt="Back arrow"
+            />
           )}
-        </ul>
-      </nav>
+          <h1 className="logo">Listainable</h1>
+        </div>
+        <SearchBar />
+        <nav>
+          <ul className="header__list">
+            <li>
+              <Link to="/list">
+                <img className="icon" src={listIcon} alt="List Icon" />
+              </Link>
+            </li>
+            {loginVisible ? null : (
+              <li onClick={handleLogin}>
+                <img className="icon" src={logoutIcon} alt="Login Icon" />
+              </li>
+            )}
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 }

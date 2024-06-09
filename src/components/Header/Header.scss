@@ -2,10 +2,19 @@
 @use '../../styles/partials/variables' as *;
 
 .header {
-    @include flex(space-between);
-    gap: $m-padding;
-    padding: $m-padding;
     background-color: $s-dark;
+
+    &__wrap {
+        @include flex(space-between);
+        gap: $m-padding;
+        padding: $m-padding;
+        
+        @include tablet {
+            @include desktop-container;
+            gap: $d-padding;
+            padding: $d-padding;
+        }
+    }
 
     &__logo-wrap {
         @include flex();

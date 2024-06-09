@@ -106,6 +106,10 @@ a {
 
 .icon {
     width: 1.5rem;
+
+    @include tablet {
+        width: 2rem;
+    }
 }
 
 address {
