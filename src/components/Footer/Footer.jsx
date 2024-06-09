@@ -1,25 +1,34 @@
 import "./Footer.scss";
+import { Link } from "react-router-dom";
+import logoutIcon from "../../assets/icons/logout-svgrepo-com.svg";
+import listIcon from "../../assets/icons/list-svgrepo-com.svg";
+import homeIcon from "../../assets/icons/home-svgrepo-com.svg";
 
 function Footer({ loginVisible, setLoginVisible }) {
-  const handleLogoutSubmit = (e) => {
-    e.preventDefault();
+  const handleLogout = () => {
     setLoginVisible(true);
   };
 
   return (
-    <footer>
-      <ul>
+    <footer className="footer">
+      <ul className="mobile">
         <li>
-          <img src="#" alt="Home Icon" />
+          <Link to="/">
+            <img className="icon" src={homeIcon} alt="List Icon" />
+          </Link>
         </li>
         <li>
-          <img src="#" alt="List Icon" />
+          <Link to="/list">
+            <img className="icon" src={listIcon} alt="List Icon" />
+          </Link>
         </li>
-        <li>
-          <img onClick={handleLogoutSubmit} src="#" alt="Login Icon" />
-        </li>
+        {loginVisible ? null : (
+          <li onClick={handleLogout}>
+            <img className="icon" src={logoutIcon} alt="Login Icon" />
+          </li>
+        )}
       </ul>
-      <div>
+      <div className="footer__info-wrap">
         <p>Listainable all rights reserves</p>
         <p>
           Contains information from OpenFoodFacts, which is made available here

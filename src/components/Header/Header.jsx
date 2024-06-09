@@ -13,7 +13,7 @@ function Header({ loginVisible, setLoginVisible }) {
     nav(-1);
   };
 
-  const handleLogin = () => {
+  const handleLogout = () => {
     setLoginVisible(true);
   };
 
@@ -40,7 +40,7 @@ function Header({ loginVisible, setLoginVisible }) {
               </Link>
             </li>
             {loginVisible ? null : (
-              <li onClick={handleLogin}>
+              <li onClick={handleLogout}>
                 <img className="icon" src={logoutIcon} alt="Login Icon" />
               </li>
             )}
