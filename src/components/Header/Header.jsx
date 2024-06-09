@@ -21,14 +21,15 @@ function Header({ loginVisible, setLoginVisible }) {
     <header className="header">
       <div className="header__wrap">
         <div className="header__logo-wrap">
-          {location.pathname !== "/" && (
-            <img
-              className="header__arrow icon"
-              onClick={goBack}
-              src={backArrow}
-              alt="Back arrow"
-            />
-          )}
+          {location.pathname !== "/" ||
+            ("/login" && (
+              <img
+                className="header__arrow icon"
+                onClick={goBack}
+                src={backArrow}
+                alt="Back arrow"
+              />
+            ))}
           <h1 className="logo">Listainable</h1>
         </div>
         <SearchBar />

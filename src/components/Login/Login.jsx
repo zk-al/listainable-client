@@ -15,18 +15,22 @@ function Login({ loginVisible, setLoginVisible }) {
     <>
       {loginVisible && (
         <div className="login">
-          <form action="submit" onSubmit={handleLoginSubmit}>
-            <label>
+          <form className="form" action="submit" onSubmit={handleLoginSubmit}>
+            <label className="form__label">
               Username
-              <input type="text" name="username" />
+              <input className="form__input" type="text" name="username" />
             </label>
-            <label>
+            <label className="form__label">
               Password
-              <input type="password" name="password" />
+              <input className="form__input" type="password" name="password" />
             </label>
-            <button type="submit">Login</button>
+            <button className="form__btn btn" type="submit">
+              Login
+            </button>
           </form>
-          <Link to="/signup">Sign Up</Link>
+          <Link className="login__signup" to="/signup">
+            Sign Up
+          </Link>
         </div>
       )}
     </>
