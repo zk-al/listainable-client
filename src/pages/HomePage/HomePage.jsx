@@ -22,50 +22,50 @@ function HomePage() {
 
   return (
     <>
-      <h2>Plant-Based Foods</h2>
-      {products
-        .filter((product) => product.categories.includes("Plant-Based Foods"))
-        .map((product) => (
-          <section key={product.id}>
-            <div>
+      <section>
+        <h2>Plant-Based Foods</h2>
+        {products
+          .filter((product) => product.categories.includes("Plant-based Foods"))
+          .map((product) => (
+            <div key={product.id}>
               <p>Image: {product.product_image}</p>
               <h3>{product.product_name}</h3>
             </div>
-          </section>
-        ))}
-      <h2>Frozen Foods</h2>
-      {products
-        .filter((product) => product.categories.includes("Frozen Foods"))
-        .map((product) => (
-          <section key={product.id}>
-            <div>
+          ))}
+      </section>
+      <section>
+        <h2>Frozen Foods</h2>
+        {products
+          .filter((product) => product.categories.includes("Frozen Foods"))
+          .map((product) => (
+            <div key={product.id}>
               <p>Image: {product.product_image}</p>
               <h3>{product.product_name}</h3>
             </div>
-          </section>
-        ))}
-      <h2>Snacks</h2>
-      {products
-        .filter((product) => product.categories.includes("Snacks"))
-        .map((product) => (
-          <section key={product.id}>
-            <div>
+          ))}
+      </section>
+      <section>
+        <h2>Snacks</h2>
+        {products
+          .filter((product) => product.categories.includes("Snacks"))
+          .map((product) => (
+            <div key={product.id}>
               <p>Image: {product.product_image}</p>
               <h3>{product.product_name}</h3>
             </div>
-          </section>
-        ))}
-      <h2>Vegetables</h2>
-      {products
-        .filter((product) => product.categories.includes("Vegetables"))
-        .map((product) => (
-          <section key={product.id}>
-            <div>
+          ))}
+      </section>
+      <section>
+        <h2>Vegetables</h2>
+        {products
+          .filter((product) => product.categories.includes("Vegetables"))
+          .map((product) => (
+            <div key={product.id}>
               <p>Image: {product.product_image}</p>
               <h3>{product.product_name}</h3>
             </div>
-          </section>
-        ))}
+          ))}
+      </section>
     </>
   );
 }
