@@ -1,4 +1,5 @@
 import "./HomePage.scss";
+import "../../styles/partials/_global.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
 

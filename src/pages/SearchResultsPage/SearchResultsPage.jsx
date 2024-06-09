@@ -1,4 +1,6 @@
 import "./SearchResultsPage.scss";
+import "../../styles/partials/_global.scss";
+
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";

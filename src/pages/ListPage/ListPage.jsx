@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./ListPage.scss";
+import "../../styles/partials/_global.scss";
 
 const PORT = process.env.PORT || 8080;
 const baseUrl = `http://localhost:${PORT}`;
