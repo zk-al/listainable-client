@@ -2,7 +2,6 @@ import "./Header.scss";
 import SearchBar from "../SearchBar/SearchBar";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import backArrow from "../../assets/icons/arrow-sm-left-svgrepo-com.svg";
-import loginIcon from "../../assets/icons/login-svgrepo-com.svg";
 import logoutIcon from "../../assets/icons/logout-svgrepo-com.svg";
 import listIcon from "../../assets/icons/list-svgrepo-com.svg";
 
