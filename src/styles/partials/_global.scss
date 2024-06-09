@@ -94,7 +94,7 @@ a {
     background-repeat: no-repeat;
     background-size: 1.25rem;
     background-position: 0.625rem;
-    background-color: $p-highlight;
+    background-color: $t-dark;
     padding: 0 32px;
     @include m-btn-font;
 
@@ -148,20 +148,19 @@ textarea {
 
     &__label {
         padding-top: $m-padding;
-        color: $p-medium;
+        color: $t-dark;
         @include m-subheader();
         text-transform: uppercase;
         font-weight: 600;
     }
 
     &__input {
-        padding: $m-padding;
-        border-radius: 4px;
-        border: 1px solid $s-medium;
+        padding: calc($m-padding / 2);
+        border-radius: 20px;
+        border: 0px solid ;
         @include m-copy();
-        background-color: $s-light;
+        background-color: $off-white;
         width: 100%;
-        min-height: 40px;
 
         &::placeholder {
             color: $p-dark;
