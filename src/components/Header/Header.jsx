@@ -15,7 +15,7 @@ function Header({ loginVisible, setLoginVisible }) {
   };
 
   const handleLogin = () => {
-    setLoginVisible(!loginVisible);
+    setLoginVisible(true);
   };
 
   return (
@@ -39,13 +39,11 @@ function Header({ loginVisible, setLoginVisible }) {
               <img className="icon" src={listIcon} alt="List Icon" />
             </Link>
           </li>
-          <li onClick={handleLogin}>
-            <img
-              className="icon"
-              src={loginVisible ? loginIcon : logoutIcon}
-              alt="Login Icon"
-            />
-          </li>
+          {loginVisible ? null : (
+            <li onClick={handleLogin}>
+              <img className="icon" src={logoutIcon} alt="Login Icon" />
+            </li>
+          )}
         </ul>
       </nav>
     </header>

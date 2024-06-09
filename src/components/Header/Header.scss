@@ -3,6 +3,7 @@
 
 .header {
     @include flex(space-between);
+    gap: $m-padding;
     padding: $m-padding;
     background-color: $s-dark;
 

@@ -103,9 +103,6 @@ a {
     }
 }
 
-img {
-    max-width: 100%;
-}
 
 .icon {
     width: 1.5rem;
@@ -116,7 +113,26 @@ address {
 }
 
 input {
-    font-family: "Petrona";
+    padding: calc($m-padding / 2);
+    border-radius: 20px;
+    border: 0px solid ;
+    @include m-copy();
+    background-color: $off-white;
+    width: 100%;
+
+    &::placeholder {
+        color: $p-dark;
+    }
+
+    &:focus-visible {
+        border: 1px solid $p-dark;
+        outline: none;
+    }
+
+    &:invalid {
+        border: 2px solid #D22d2d;
+    }
+
 }
 textarea {
     font-family: "Petrona";
