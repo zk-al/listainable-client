@@ -109,6 +109,10 @@ function ListPage() {
                 handleCheckbox(listItem.id);
               }}
             />
+            <img
+              src={`${baseUrl}/${listItem.product_image}`}
+              alt={listItem.product_name}
+            />
             <p>{listItem.product_name}</p>
             <div>
               <button

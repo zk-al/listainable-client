@@ -3,7 +3,7 @@ import "../../styles/partials/_global.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.REACT_APP_API_PORT || 8080;
 const baseUrl = `http://localhost:${PORT}`;
 
 function HomePage() {
@@ -29,7 +29,10 @@ function HomePage() {
           .filter((product) => product.categories.includes("Plant-based Foods"))
           .map((product) => (
             <div key={product.id}>
-              <p>Image: {product.product_image}</p>
+              <img
+                src={`${baseUrl}/${product.product_image}`}
+                alt={product.product_name}
+              />
               <h3>{product.product_name}</h3>
             </div>
           ))}
@@ -40,7 +43,10 @@ function HomePage() {
           .filter((product) => product.categories.includes("Frozen Foods"))
           .map((product) => (
             <div key={product.id}>
-              <p>Image: {product.product_image}</p>
+              <img
+                src={`${baseUrl}/${product.product_image}`}
+                alt={product.product_name}
+              />
               <h3>{product.product_name}</h3>
             </div>
           ))}
@@ -51,7 +57,10 @@ function HomePage() {
           .filter((product) => product.categories.includes("Snacks"))
           .map((product) => (
             <div key={product.id}>
-              <p>Image: {product.product_image}</p>
+              <img
+                src={`${baseUrl}/${product.product_image}`}
+                alt={product.product_name}
+              />
               <h3>{product.product_name}</h3>
             </div>
           ))}
@@ -62,7 +71,10 @@ function HomePage() {
           .filter((product) => product.categories.includes("Vegetables"))
           .map((product) => (
             <div key={product.id}>
-              <p>Image: {product.product_image}</p>
+              <img
+                src={`${baseUrl}/${product.product_image}`}
+                alt={product.product_name}
+              />
               <h3>{product.product_name}</h3>
             </div>
           ))}
