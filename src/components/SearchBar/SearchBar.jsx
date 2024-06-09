@@ -23,6 +23,7 @@ function SearchBar() {
   return (
     <>
       <input
+        className="search-bar"
         type="text"
         value={searchQuery}
         onChange={handleSearchInput}
