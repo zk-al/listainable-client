@@ -1,0 +1,178 @@
+/* -------------------------------------------------------------------------- */
+/*                                  PARTIALS                                  */
+/* -------------------------------------------------------------------------- */
+
+@use 'mixins' as *;
+@use 'variables' as *;
+
+/* -------------------------------------------------------------------------- */
+/*                                 TYPOGRAPHY                                 */
+/* -------------------------------------------------------------------------- */
+
+@font-face {
+    font-family: "Petrona";
+    src: url(../../../assets/fonts/Petrona-Regular.woff) format(woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Petrona";
+    src: url(../../../assets/fonts/Petrona-SemiBold.woff) format(woff);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Petrona";
+    src: url(../../../assets/fonts/Petrona-Bold.woff) format(woff);
+    font-weight: 700;
+}
+
+h1 {
+    @include m-header();
+
+    @include tablet {
+        @include d-page-header;
+    }
+}
+
+h2 {
+    @include section-header();
+}
+
+h3, h4, h5, h6 {
+    @include m-subheader();
+
+    @include tablet {
+        @include d-subheader();
+    }
+}
+
+p {
+    @include m-copy();
+
+    @include tablet {
+        @include d-copy();
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                BASE STYLING                                */
+/* -------------------------------------------------------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Petrona";
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    @include m-copy;
+}
+
+.btn {
+    font-family: "Petrona";
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    height: 40px;
+    border: 0px;
+    border-radius: 4px;
+    color: $p-light;
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+    background-position: 0.625rem;
+    background-color: $t-dark;
+    padding: 0 32px;
+    @include m-btn-font;
+
+    @include tablet {
+        max-width: 150px;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+address {
+    font-style: normal;
+}
+
+input {
+    font-family: "Petrona";
+}
+textarea {
+    font-family: "Petrona";
+    resize: none;
+}
+
+.form {
+    @include flex(flex-start);
+    flex-direction: column;
+    gap: $m-padding;
+    width: 100%;
+
+    @include tablet {
+        align-items: flex-end;
+        flex-direction: row;
+        gap: $d-padding;
+    }
+    
+    
+    &__input-wrap {
+        @include flex(flex-start, flex-start);
+        flex-direction: column;
+        width: 100%;
+
+        & textarea {
+            min-height: 100px;
+
+            @include tablet {
+                min-height: 0;
+            }
+        }
+    }
+
+    &__label {
+        padding-top: $m-padding;
+        color: $t-dark;
+        @include m-subheader();
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    &__input {
+        padding: calc($m-padding / 2);
+        border-radius: 20px;
+        border: 0px solid ;
+        @include m-copy();
+        background-color: $off-white;
+        width: 100%;
+
+        &::placeholder {
+            color: $p-dark;
+        }
+
+        &:focus-visible {
+            border: 1px solid $p-dark;
+            outline: none;
+        }
+
+        &:invalid {
+            border: 2px solid #D22d2d;
+        }
+    }
+}

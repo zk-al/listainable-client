@@ -1,4 +1,6 @@
 import "./SignupPage.scss";
+import "../../styles/partials/_global.scss";
+
 import { useNavigate } from "react-router-dom";
 
 function SignupPage() {

@@ -1,17 +1,18 @@
 import "./ProductPage.scss";
+import "../../styles/partials/_global.scss";
+
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.REACT_APP_API_PORT || 8080;
 const baseUrl = `http://localhost:${PORT}`;
 
 function ProductPage() {
   const params = useParams();
   const selectedProduct = params.id;
 
-  const [product, setProduct] = useState("");
-  console.log(product);
+  const [product, setProduct] = useState([]);
 
   useEffect(() => {
     const getProduct = async (id) => {
@@ -29,11 +30,14 @@ function ProductPage() {
   return (
     <section>
       <h1>{product.product_name}</h1>
-      <img src="product_image" alt="Product Image" />
+      <img
+        src={`${baseUrl}/${product.product_image}`}
+        alt={product.product_name}
+      />
       <div>
         <h2>Certifications and Labels</h2>
         <ul>
-          {product.certifications.map((cert) => (
+          {product.certifications?.map((cert) => (
             <li>{cert}</li>
           ))}
         </ul>
@@ -41,7 +45,7 @@ function ProductPage() {
       <div>
         <h2>Ingredients</h2>
         <ul>
-          {product.ingredients.map((ingredient) => (
+          {product.ingredients?.map((ingredient) => (
             <li>{ingredient}</li>
           ))}
         </ul>

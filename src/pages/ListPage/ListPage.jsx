@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./ListPage.scss";
+import "../../styles/partials/_global.scss";
 
 const PORT = process.env.PORT || 8080;
 const baseUrl = `http://localhost:${PORT}`;
@@ -107,6 +108,10 @@ function ListPage() {
               onChange={() => {
                 handleCheckbox(listItem.id);
               }}
+            />
+            <img
+              src={`${baseUrl}/${listItem.product_image}`}
+              alt={listItem.product_name}
             />
             <p>{listItem.product_name}</p>
             <div>

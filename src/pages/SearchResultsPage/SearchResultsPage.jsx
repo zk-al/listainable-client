@@ -1,4 +1,6 @@
 import "./SearchResultsPage.scss";
+import "../../styles/partials/_global.scss";
+
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -29,7 +31,10 @@ function SearchResultsPage() {
       {/* map through results and populate + add to list icon */}
       {searchResults.map((product) => (
         <div>
-          <p>{product.product_image}</p>
+          <img
+            src={`${baseUrl}/${product.product_image}`}
+            alt={product.product_name}
+          />
           <h3>{product.product_name}</h3>
         </div>
       ))}
