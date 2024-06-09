@@ -1,0 +1,16 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.footer {
+    background-color: $s-dark;
+
+    &__info-wrap {
+        padding: $m-padding;
+        text-align: center;
+        
+        @include tablet {
+            @include desktop-container;
+            padding: $d-padding;
+        }
+    }
+}
