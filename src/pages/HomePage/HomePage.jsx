@@ -30,9 +30,22 @@ function HomePage() {
   const handleAdd = async (productId) => {
     // This will change to dynamically work depending on the user that is logged in
     const listId = 1;
-
+    console.log(productId);
     try {
-      await axios.put(`${baseUrl}/list/${productId}`, productId);
+      // First, check if the product already exists in the list
+      const response = await axios.get(`${baseUrl}/list/${listId}`);
+      const productList = response.data; // Assuming the response is an array of products in the list
+
+      const existingProduct = productList.find(
+        (product) => product.product_id === productId
+      );
+
+      if (!existingProduct) {
+        await axios.post(`${baseUrl}/list/${listId}`, {
+          productId,
+          quantity: 1,
+        });
+      }
     } catch (error) {
       console.error("Error adding quantity: ", error);
     }
@@ -68,7 +81,10 @@ function HomePage() {
             .map((product) => (
               <swiper-slide key={product.id}>
                 <div className="card">
-                  <div className="card__add" onClick={handleAdd}>
+                  <div
+                    className="card__add"
+                    onClick={() => handleAdd(product.id)}
+                  >
                     <img
                       className="card__add-icon"
                       src={plusIcon}
