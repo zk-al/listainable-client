@@ -4,6 +4,13 @@
 
 Listainable is a grocery list app that allows users to search for grocery items and add to a list. Users are given a average sustainability rating based on their selected products.
 
+### Dev Setup 
+
+1. npm i to set up node modules
+2. set up a .env for the server side
+3. npm run seed to seed the your database with base data
+4. npm start for front-end, npm run dev for back end and you're up and running!
+
 ### Problem
 
 Trying to shop sustainably is famously difficult, especially with more more companies getting better at greenwashing products making it seem good for the environment when it is not. Based on a <a href="http://www.bccdc.ca/Documents/Food_Costing_in_BC_2022_Report_FINAL.pdf">survey</a> conducted by the BCCDC the average person spends over $300 a month on groceries. Since we all have to grocery shop I thought, how might we give consumers more power to shop sustainably.
@@ -70,12 +77,12 @@ List the functionality that your app will include. These can be written as user 
   - react
   - react-router
   - axios
-  - react-multi-carousel
-  - fuse.js
+  - swiper for sliders
+  
 - Server libraries:
   - knex
   - express
-  - bcrypt for passwords
+  - fuse.js
 
 ### APIs
 
