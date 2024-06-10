@@ -139,3 +139,25 @@ input {
     }
 
 }
+
+.eco-score {
+    @include m-copy();
+    color: white;
+    background-color: $p-light;
+    width: 8rem;
+    padding: calc($m-padding / 2);
+    border-radius: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+.nutri-score {
+    @include m-copy();
+    color: white;
+    background-color: $t-light;
+    width: 8rem;
+    padding: calc($m-padding / 2);
+    border-radius: 20px;
+    text-align: center;
+    margin: 0;
+}

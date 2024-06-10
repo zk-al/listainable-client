@@ -1,2 +1,40 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
+
+.slider-section {
+    @include tablet {
+        @include desktop-container();
+    }
+}
+.card {
+    @include flex();
+    flex-direction: column;
+    border: 3px solid $p-light;
+    margin: $m-padding calc($m-padding * 3);
+    padding: $m-padding;
+    border-radius: 20px;
+    transition: $transition;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    overflow: hidden ;
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
+    }
+
+    &__image{
+        width: 10rem;
+    }
+
+    &__text {
+        @include flex();
+        flex-direction: column;
+        gap: calc($m-padding / 2);
+        width: 100%;
+        margin-top: $m-padding;
+    }
+
+    &__name {
+        @include section-header();
+        font-size: 1rem;
+    }
+}
