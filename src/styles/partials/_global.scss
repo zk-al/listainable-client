@@ -94,16 +94,17 @@ a {
     height: 40px;
     border: 0px;
     border-radius: 4px;
-    color: $p-light;
+    color: $off-white;
     background-repeat: no-repeat;
     background-size: 1.25rem;
     background-position: 0.625rem;
-    background-color: $t-dark;
+    background-color: $p-dark;
     padding: 0 32px;
     @include m-btn-font;
+    transition: $transition;
 
-    @include tablet {
-        max-width: 150px;
+    &:hover {
+        background-color: $p-light;
     }
 }
 
@@ -114,10 +115,6 @@ a {
     @include tablet {
         width: 2rem;
     }
-}
-
-address {
-    font-style: normal;
 }
 
 input {
@@ -141,66 +138,4 @@ input {
         border: 2px solid #D22d2d;
     }
 
-}
-textarea {
-    font-family: "Petrona";
-    resize: none;
-}
-
-.form {
-    @include flex(flex-start);
-    flex-direction: column;
-    gap: $m-padding;
-    width: 100%;
-
-    @include tablet {
-        align-items: flex-end;
-        flex-direction: row;
-        gap: $d-padding;
-    }
-    
-    
-    &__input-wrap {
-        @include flex(flex-start, flex-start);
-        flex-direction: column;
-        width: 100%;
-
-        & textarea {
-            min-height: 100px;
-
-            @include tablet {
-                min-height: 0;
-            }
-        }
-    }
-
-    &__label {
-        padding-top: $m-padding;
-        color: $t-dark;
-        @include m-subheader();
-        text-transform: uppercase;
-        font-weight: 600;
-    }
-
-    &__input {
-        padding: calc($m-padding / 2);
-        border-radius: 20px;
-        border: 0px solid ;
-        @include m-copy();
-        background-color: $off-white;
-        width: 100%;
-
-        &::placeholder {
-            color: $p-dark;
-        }
-
-        &:focus-visible {
-            border: 1px solid $p-dark;
-            outline: none;
-        }
-
-        &:invalid {
-            border: 2px solid #D22d2d;
-        }
-    }
 }
