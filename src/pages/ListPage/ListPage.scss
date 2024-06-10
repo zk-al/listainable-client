@@ -26,10 +26,6 @@
         }
     }
 
-    &__checkbox {
-
-    }
-
     &__product {
         @include flex();
         flex-direction: column;
