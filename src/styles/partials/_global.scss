@@ -1,0 +1,164 @@
+/* -------------------------------------------------------------------------- */
+/*                                  PARTIALS                                  */
+/* -------------------------------------------------------------------------- */
+
+@use 'mixins' as *;
+@use 'variables' as *;
+
+/* -------------------------------------------------------------------------- */
+/*                                 TYPOGRAPHY                                 */
+/* -------------------------------------------------------------------------- */
+
+@font-face {
+    font-family: "Petrona";
+    src: url(../../assets/fonts/Petrona-Regular.woff) format(woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Petrona";
+    src: url(../../assets/fonts/Petrona-SemiBold.woff) format(woff);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Petrona";
+    src: url(../../assets/fonts/Petrona-Bold.woff) format(woff);
+    font-weight: 700;
+}
+
+h1 {
+    @include m-header();
+
+    @include tablet {
+        @include d-page-header;
+    }
+}
+
+h2 {
+    @include section-header();
+}
+
+h3, h4, h5, h6 {
+    @include m-subheader();
+
+    @include tablet {
+        @include d-subheader();
+    }
+}
+
+p {
+    @include m-copy();
+
+    @include tablet {
+        @include d-copy();
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                BASE STYLING                                */
+/* -------------------------------------------------------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Petrona";
+    margin: 0;
+}
+
+.mobile {
+    display: none;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    @include m-copy;
+    color: black;
+}
+
+.btn {
+    font-family: "Petrona";
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    height: 40px;
+    border: 0px;
+    border-radius: 4px;
+    color: $off-white;
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+    background-position: 0.625rem;
+    background-color: $p-dark;
+    padding: 0 32px;
+    @include m-btn-font;
+    transition: $transition;
+
+    &:hover {
+        background-color: $p-light;
+    }
+}
+
+
+.icon {
+    width: 1.5rem;
+
+    @include tablet {
+        width: 2rem;
+    }
+}
+
+input {
+    padding: calc($m-padding / 2);
+    border-radius: 20px;
+    border: 0px solid ;
+    @include m-copy();
+    background-color: $off-white;
+    width: 100%;
+
+    &::placeholder {
+        color: $p-dark;
+    }
+
+    &:focus-visible {
+        border: 1px solid $p-dark;
+        outline: none;
+    }
+
+    &:invalid {
+        border: 2px solid #D22d2d;
+    }
+
+}
+
+.eco-score {
+    @include m-copy();
+    color: white;
+    background-color: $p-light;
+    width: 10rem;
+    padding: calc($m-padding / 2);
+    border-radius: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+.nutri-score {
+    @include m-copy();
+    color: white;
+    background-color: $t-light;
+    width: 10rem;
+    padding: calc($m-padding / 2);
+    border-radius: 20px;
+    text-align: center;
+    margin: 0;
+}
