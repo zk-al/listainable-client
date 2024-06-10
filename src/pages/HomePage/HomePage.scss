@@ -2,8 +2,13 @@
 @use '../../styles/partials/variables' as *;
 
 .slider-section {
+    text-align: center;
+    margin:  calc($m-padding * 4) $m-padding; 
+
     @include tablet {
         @include desktop-container();
+        margin-top: calc($d-padding * 4) ; 
+        margin-bottom: calc($d-padding * 4) ; 
     }
 }
 .card {

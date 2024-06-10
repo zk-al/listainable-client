@@ -30,9 +30,7 @@ function HomePage() {
   const handleAdd = async (productId) => {
     // This will change to dynamically work depending on the user that is logged in
     const listId = 1;
-    console.log(productId);
     try {
-      // First, check if the product already exists in the list
       const response = await axios.get(`${baseUrl}/list/${listId}`);
       const productList = response.data; // Assuming the response is an array of products in the list
 
@@ -137,7 +135,10 @@ function HomePage() {
             .map((product) => (
               <swiper-slide key={product.id}>
                 <div className="card">
-                  <div className="card__add">
+                  <div
+                    className="card__add"
+                    onClick={() => handleAdd(product.id)}
+                  >
                     <img
                       className="card__add-icon"
                       src={plusIcon}
@@ -189,7 +190,10 @@ function HomePage() {
             .map((product) => (
               <swiper-slide key={product.id}>
                 <div className="card">
-                  <div className="card__add">
+                  <div
+                    className="card__add"
+                    onClick={() => handleAdd(product.id)}
+                  >
                     <img
                       className="card__add-icon"
                       src={plusIcon}
