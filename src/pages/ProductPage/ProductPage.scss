@@ -1,0 +1,40 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.product {
+    padding: calc($m-padding * 2) $m-padding;
+    @include flex();
+    flex-direction: column;
+
+    @include tablet {
+        flex-direction: row;
+        padding: calc($d-padding * 2) $d-padding;
+    }
+
+    &__image {
+        max-width: 100%;
+        
+        @include tablet {
+            padding-right: calc($d-padding * 3);
+        }
+    }
+
+    &__content {
+        @include flex($align: flex-start);
+        flex-direction: column;
+        gap: $m-padding;
+        margin: calc($m-padding * 2) 0;
+    }
+
+    &__list-item {
+        list-style:disc;
+        margin-left: $m-padding;
+        padding-bottom: calc($m-padding / 2);
+    }
+
+    &__scores {
+        @include flex($align: flex-start);
+        flex-direction: column;
+        gap: $m-padding;
+    }
+}
