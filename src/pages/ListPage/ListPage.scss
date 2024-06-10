@@ -1,0 +1,56 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.list {
+    @include flex();
+    flex-direction: column;
+    gap: $m-padding;
+    flex-wrap: wrap;
+    margin: calc($m-padding * 2) 0;
+
+    &__list {
+        @include flex();
+        flex-direction: column;
+        gap: $m-padding;
+        flex-wrap: wrap;
+        
+    }
+
+    &__item {
+        @include flex(space-between);
+        width: 400px;
+        margin: $m-padding 0;
+
+        @include tablet {
+            width: 600px
+        }
+    }
+
+    &__checkbox {
+
+    }
+
+    &__product {
+        @include flex();
+        flex-direction: column;
+    }
+
+    &__checkbox {
+        width: auto;
+    }
+
+    &__img {
+        width: 5rem;
+    }
+
+    &__qty {
+        @include flex();
+        flex-direction: column;
+    }
+
+    &__btn {
+        width: 40px;
+        padding: calc($m-padding / 3);
+        border-radius: 20px;
+    }
+}
