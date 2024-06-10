@@ -1,5 +1,5 @@
 import "./App.scss";
-import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useState } from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -21,20 +21,11 @@ function App() {
         <Login loginVisible={loginVisible} setLoginVisible={setLoginVisible} />
       )}
       <Routes>
-        {loginVisible ? (
-          <Route path="*" element={<Navigate to="/login" />} />
-        ) : (
-          <>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/signup" element={<SignupPage />} />
-            <Route
-              path="/search-results/:query"
-              element={<SearchResultsPage />}
-            />
-            <Route path="/product/:id" element={<ProductPage />} />
-            <Route path="/list" element={<ListPage />} />
-          </>
-        )}
+        <Route path="/" element={<HomePage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/search-results/:query" element={<SearchResultsPage />} />
+        <Route path="/product/:id" element={<ProductPage />} />
+        <Route path="/list" element={<ListPage />} />
       </Routes>
       <Footer loginVisible={loginVisible} setLoginVisible={setLoginVisible} />
     </>

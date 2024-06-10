@@ -1,3 +1,4 @@
+import Header from "../Header/Header";
 import "./Login.scss";
 import { Link } from "react-router-dom";
 
@@ -15,6 +16,7 @@ function Login({ loginVisible, setLoginVisible }) {
     <>
       {loginVisible && (
         <div className="login">
+          <h1 className="login__header">Listainable</h1>
           <form className="form" action="submit" onSubmit={handleLoginSubmit}>
             <label className="form__label">
               Username

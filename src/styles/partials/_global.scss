@@ -119,7 +119,6 @@ a {
 
 input {
     padding: calc($m-padding / 2);
-    margin-top: $m-padding;
     border-radius: 20px;
     border: 0px solid ;
     @include m-copy();
