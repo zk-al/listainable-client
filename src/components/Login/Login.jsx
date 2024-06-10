@@ -1,4 +1,3 @@
-import Header from "../Header/Header";
 import "./Login.scss";
 import { Link } from "react-router-dom";
 
