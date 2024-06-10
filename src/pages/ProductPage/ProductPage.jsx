@@ -28,31 +28,36 @@ function ProductPage() {
   }, []);
 
   return (
-    <section>
-      <h1>{product.product_name}</h1>
+    <section className="product">
       <img
+        className="product__image"
         src={`${baseUrl}/${product.product_image}`}
         alt={product.product_name}
       />
-      <div>
-        <h2>Certifications and Labels</h2>
-        <ul>
-          {product.certifications?.map((cert) => (
-            <li>{cert}</li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h2>Ingredients</h2>
-        <ul>
-          {product.ingredients?.map((ingredient) => (
-            <li>{ingredient}</li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <p>Eco-Score Rating {product.eco_score}</p>
-        <p>Nutri Score Rating {product.nutri_score}</p>
+      <div className="product__content">
+        <h1>{product.product_name}</h1>
+        <div>
+          <h2>Certifications and Labels</h2>
+          <ul>
+            {product.certifications?.map((cert) => (
+              <li className="product__list-item">{cert}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2>Ingredients</h2>
+          <ul>
+            {product.ingredients?.map((ingredient) => (
+              <li className="product__list-item">{ingredient}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="product__scores">
+          <p className="eco-score">Eco-Score Rating {product.eco_score}</p>
+          <p className="nutri-score">
+            Nutri Score Rating {product.nutri_score}
+          </p>
+        </div>
       </div>
     </section>
   );
