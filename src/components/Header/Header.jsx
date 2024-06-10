@@ -29,7 +29,9 @@ function Header({ loginVisible, setLoginVisible }) {
               alt="Back arrow"
             />
           )}
-          <h1 className="logo">Listainable</h1>
+          <Link to="/">
+            <h1 className="logo">Listainable</h1>
+          </Link>
         </div>
         <SearchBar />
         <nav>

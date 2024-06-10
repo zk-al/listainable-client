@@ -100,37 +100,47 @@ function ListPage() {
 
   return (
     <>
-      <ul>
-        {userList.map((listItem) => (
-          <li key={listItem.id}>
-            <input
-              type="checkbox"
-              onChange={() => {
-                handleCheckbox(listItem.id);
-              }}
-            />
-            <img
-              src={`${baseUrl}/${listItem.product_image}`}
-              alt={listItem.product_name}
-            />
-            <p>{listItem.product_name}</p>
-            <div>
-              <button
-                onClick={() => increaseQty(listItem.id, listItem.quantity)}
-              >
-                +
-              </button>
-              <p>{listItem.quantity}</p>
-              <button
-                onClick={() => decreaseQty(listItem.id, listItem.quantity)}
-              >
-                -
-              </button>
-            </div>
-          </li>
-        ))}
-      </ul>
-      <div>Average EcoScore: {averageScore}</div>
+      <section className="list">
+        <h1>MY LIST</h1>
+        <ul className="list__list">
+          {userList.map((listItem) => (
+            <li className="list__item" key={listItem.id}>
+              <input
+                className="list__checkbox"
+                type="checkbox"
+                onChange={() => {
+                  handleCheckbox(listItem.id);
+                }}
+              />
+              <div className="list__product">
+                <img
+                  className="list__img"
+                  src={`${baseUrl}/${listItem.product_image}`}
+                  alt={listItem.product_name}
+                />
+                <h2>{listItem.product_name}</h2>
+              </div>
+
+              <div className="list__qty">
+                <button
+                  className="list__btn btn"
+                  onClick={() => increaseQty(listItem.id, listItem.quantity)}
+                >
+                  +
+                </button>
+                <p>{listItem.quantity}</p>
+                <button
+                  className="list__btn btn"
+                  onClick={() => decreaseQty(listItem.id, listItem.quantity)}
+                >
+                  -
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <div className="eco-score">Average Eco Score: {averageScore}</div>
+      </section>
     </>
   );
 }
