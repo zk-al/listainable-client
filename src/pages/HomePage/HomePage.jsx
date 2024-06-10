@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { register } from "swiper/element/bundle";
 import "swiper/css";
 import "swiper/css/navigation";
+import { Link } from "react-router-dom";
 
 const PORT = process.env.REACT_APP_API_PORT || 8080;
 const baseUrl = `http://localhost:${PORT}`;
@@ -44,6 +45,7 @@ function HomePage() {
           quantity: 1,
         });
       }
+      alert("Item added! Check your list to update the quantity.");
     } catch (error) {
       console.error("Error adding quantity: ", error);
     }
@@ -89,21 +91,22 @@ function HomePage() {
                       alt="Plus Icon"
                     />
                   </div>
-
-                  <img
-                    className="card__image"
-                    src={`${baseUrl}/${product.product_image}`}
-                    alt={product.product_name}
-                  />
-                  <div className="card__text">
-                    <h3 className="card__name">{product.product_name}</h3>
-                    <h4 className="eco-score">
-                      Eco Score: {product.eco_score}
-                    </h4>
-                    <h4 className="nutri-score">
-                      Nutri Score: {product.nutri_score}
-                    </h4>
-                  </div>
+                  <Link to={`/product/${product.id}`}>
+                    <img
+                      className="card__image"
+                      src={`${baseUrl}/${product.product_image}`}
+                      alt={product.product_name}
+                    />
+                    <div className="card__text">
+                      <h3 className="card__name">{product.product_name}</h3>
+                      <h4 className="eco-score">
+                        Eco Score: {product.eco_score}
+                      </h4>
+                      <h4 className="nutri-score">
+                        Nutri Score: {product.nutri_score}
+                      </h4>
+                    </div>
+                  </Link>
                 </div>
               </swiper-slide>
             ))}
@@ -145,20 +148,22 @@ function HomePage() {
                       alt="Plus Icon"
                     />
                   </div>
-                  <img
-                    className="card__image"
-                    src={`${baseUrl}/${product.product_image}`}
-                    alt={product.product_name}
-                  />
-                  <div className="card__text">
-                    <h3 className="card__name">{product.product_name}</h3>
-                    <h4 className="eco-score">
-                      Eco Score: {product.eco_score}
-                    </h4>
-                    <h4 className="nutri-score">
-                      Nutri Score: {product.nutri_score}
-                    </h4>
-                  </div>
+                  <Link to={`/product/${product.id}`}>
+                    <img
+                      className="card__image"
+                      src={`${baseUrl}/${product.product_image}`}
+                      alt={product.product_name}
+                    />
+                    <div className="card__text">
+                      <h3 className="card__name">{product.product_name}</h3>
+                      <h4 className="eco-score">
+                        Eco Score: {product.eco_score}
+                      </h4>
+                      <h4 className="nutri-score">
+                        Nutri Score: {product.nutri_score}
+                      </h4>
+                    </div>
+                  </Link>
                 </div>
               </swiper-slide>
             ))}
@@ -200,20 +205,22 @@ function HomePage() {
                       alt="Plus Icon"
                     />
                   </div>
-                  <img
-                    className="card__image"
-                    src={`${baseUrl}/${product.product_image}`}
-                    alt={product.product_name}
-                  />
-                  <div className="card__text">
-                    <h3 className="card__name">{product.product_name}</h3>
-                    <h4 className="eco-score">
-                      Eco Score: {product.eco_score}
-                    </h4>
-                    <h4 className="nutri-score">
-                      Nutri Score: {product.nutri_score}
-                    </h4>
-                  </div>
+                  <Link to={`/product/${product.id}`}>
+                    <img
+                      className="card__image"
+                      src={`${baseUrl}/${product.product_image}`}
+                      alt={product.product_name}
+                    />
+                    <div className="card__text">
+                      <h3 className="card__name">{product.product_name}</h3>
+                      <h4 className="eco-score">
+                        Eco Score: {product.eco_score}
+                      </h4>
+                      <h4 className="nutri-score">
+                        Nutri Score: {product.nutri_score}
+                      </h4>
+                    </div>
+                  </Link>
                 </div>
               </swiper-slide>
             ))}
