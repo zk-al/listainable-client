@@ -4,7 +4,7 @@
 
 Listainable is a grocery list app that allows users to search for grocery items and add to a list. Users are given a average sustainability rating based on their selected products.
 
-### Dev Setup 
+### Dev Setup
 
 1. npm i to set up node modules
 2. set up a .env for the server side
@@ -78,7 +78,6 @@ List the functionality that your app will include. These can be written as user 
   - react-router
   - axios
   - swiper for sliders
-  
 - Server libraries:
   - knex
   - express
@@ -103,7 +102,7 @@ List the functionality that your app will include. These can be written as user 
 
 ### Mockups
 
-![](./assets/README/listainbale-mockup-mobile.png)
+![](./src/assets/README/listainbale-mockup-mobile.png)
 
 ### Data
 
@@ -114,7 +113,7 @@ List the functionality that your app will include. These can be written as user 
 - Each user will be able to one list which contains the table id, productname, ecoScore and quantity
   - Users will be able to add, delete, and edit that quantity of items on the list
 
-![](./assets/README/listainbale-db.png)
+![](./src/assets/README/listainable-database.png)
 
 ### Product Endpoints
 
