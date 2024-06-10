@@ -1,5 +1,6 @@
 import "./HomePage.scss";
 import "../../styles/partials/_global.scss";
+import plusIcon from "../../assets/icons/plus-large-svgrepo-com.svg";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { register } from "swiper/element/bundle";
@@ -26,12 +27,22 @@ function HomePage() {
     getProducts();
   }, []);
 
+  const handleAdd = async (productId) => {
+    // This will change to dynamically work depending on the user that is logged in
+    const listId = 1;
+
+    try {
+      await axios.put(`${baseUrl}/list/${productId}`, productId);
+    } catch (error) {
+      console.error("Error adding quantity: ", error);
+    }
+  };
+
   return (
     <>
       <section className="slider-section">
         <h2>Plant-Based Foods</h2>
         <swiper-container
-          // ref={swiperElRef}
           slides-per-view="1"
           navigation="true"
           loop="true"
@@ -57,6 +68,14 @@ function HomePage() {
             .map((product) => (
               <swiper-slide key={product.id}>
                 <div className="card">
+                  <div className="card__add" onClick={handleAdd}>
+                    <img
+                      className="card__add-icon"
+                      src={plusIcon}
+                      alt="Plus Icon"
+                    />
+                  </div>
+
                   <img
                     className="card__image"
                     src={`${baseUrl}/${product.product_image}`}
@@ -102,6 +121,13 @@ function HomePage() {
             .map((product) => (
               <swiper-slide key={product.id}>
                 <div className="card">
+                  <div className="card__add">
+                    <img
+                      className="card__add-icon"
+                      src={plusIcon}
+                      alt="Plus Icon"
+                    />
+                  </div>
                   <img
                     className="card__image"
                     src={`${baseUrl}/${product.product_image}`}
@@ -147,6 +173,13 @@ function HomePage() {
             .map((product) => (
               <swiper-slide key={product.id}>
                 <div className="card">
+                  <div className="card__add">
+                    <img
+                      className="card__add-icon"
+                      src={plusIcon}
+                      alt="Plus Icon"
+                    />
+                  </div>
                   <img
                     className="card__image"
                     src={`${baseUrl}/${product.product_image}`}

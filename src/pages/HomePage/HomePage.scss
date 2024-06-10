@@ -16,9 +16,25 @@
     transition: $transition;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     overflow: hidden ;
+    position: relative;
 
     &:hover {
         box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
+    }
+
+    &__add {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: $p-dark;
+        border-radius: 50%;
+        @include flex();
+
+        &-icon {
+            width: 30px;
+        }
     }
 
     &__image{
