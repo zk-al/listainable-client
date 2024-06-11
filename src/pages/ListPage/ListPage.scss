@@ -41,12 +41,20 @@
 
     &__qty {
         @include flex();
-        flex-direction: column;
+        background-color: $p-dark;
+        border-radius: 20px;
+        color: white;
+        gap: calc($m-padding / 2);
+
+        &-text {
+            margin: 0;
+        }
     }
 
     &__btn {
         width: 40px;
         padding: calc($m-padding / 3);
         border-radius: 20px;
+        font-size: 1rem;
     }
 }

@@ -128,7 +128,7 @@ function ListPage() {
                 >
                   +
                 </button>
-                <p>{listItem.quantity}</p>
+                <p className="list__qty-text">{listItem.quantity}</p>
                 <button
                   className="list__btn btn"
                   onClick={() => decreaseQty(listItem.id, listItem.quantity)}
