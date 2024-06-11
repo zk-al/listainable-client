@@ -11,6 +11,11 @@
         margin-bottom: calc($d-padding * 4) ; 
     }
 }
+
+.swiper-button-next, .swiper-button-prev {
+    color: red !important;
+}
+
 .card {
     @include flex();
     flex-direction: column;
