@@ -5,6 +5,7 @@
     @include flex(space-between, stretch);
     flex-direction: column;
     min-height: 100vh;
+    background-color: $s-light;
 }
 
 .main {

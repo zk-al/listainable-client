@@ -52,7 +52,12 @@ function HomePage() {
       injectStyles: [
         `.swiper-button-next, 
           .swiper-button-prev {
-              color: black;
+              color: #195321;
+              transition: 0.25s;
+          }
+          .swiper-button-next:hover, 
+          .swiper-button-prev:hover {
+              color: #69995d;
           }
         `,
       ],

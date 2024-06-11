@@ -18,6 +18,7 @@
     border: 3px solid $p-light;
     margin: $m-padding calc($m-padding * 3);
     padding: $m-padding;
+    background-color: white;
     border-radius: 20px;
     transition: $transition;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -36,8 +37,13 @@
         right: 10px;
         z-index: 99;
         background-color: $p-dark;
+        transition: $transition;
         border-radius: 50%;
         @include flex();
+
+        &:hover {
+            background-color: $p-light;
+        }
 
         &-icon {
             width: 30px;
