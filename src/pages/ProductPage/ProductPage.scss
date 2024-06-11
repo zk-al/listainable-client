@@ -2,13 +2,25 @@
 @use '../../styles/partials/variables' as *;
 
 .product {
-    padding: calc($m-padding * 2) $m-padding;
     @include flex();
-    flex-direction: column;
+    padding: calc($m-padding * 2) $m-padding;
 
     @include tablet {
-        flex-direction: row;
         padding: calc($d-padding * 2) $d-padding;
+    }
+
+    &__wrap {
+        @include flex();
+        flex-direction: column;
+        background: white;
+        border-radius: 20px;
+        padding: calc($m-padding * 2);
+
+        @include tablet {
+            flex-direction: row;
+            padding: calc($d-padding * 2);
+
+        }
     }
 
     &__image {
@@ -24,6 +36,11 @@
         flex-direction: column;
         gap: $m-padding;
         margin: calc($m-padding * 2) 0;
+    }
+
+    &__name {
+        text-transform: uppercase;
+        margin-bottom: 0;
     }
 
     &__list-item {

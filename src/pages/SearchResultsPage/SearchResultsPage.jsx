@@ -54,7 +54,6 @@ function SearchResultsPage() {
 
   return (
     <section className="results">
-      {/* map through results and populate + add to list icon */}
       {searchResults.map((product) => (
         <div className="card">
           <div className="card__add" onClick={() => handleAdd(product.id)}>

@@ -13,40 +13,93 @@
         flex-direction: column;
         gap: $m-padding;
         flex-wrap: wrap;
+        width: 100%;
+        max-width: 300px;
+        margin: 0;
+
+        @include tablet {
+            max-width: none;
+        }
         
     }
 
     &__item {
         @include flex(space-between);
-        width: 400px;
         margin: $m-padding 0;
+        gap: calc($m-padding *3);
+        width: 100%;
+        padding: $m-padding;
+        background-color: white;
+        border-radius:20px;
 
         @include tablet {
-            width: 600px
+            width: 700px;
+            flex-direction: row;
+            padding: $d-padding;
         }
     }
 
-    &__product {
-        @include flex();
-        flex-direction: column;
-    }
 
     &__checkbox {
-        width: auto;
+        appearance: none;
+        width: 30px;
+        height: 30px;
+        margin-right: $d-padding ;
+        border: 2px solid $p-dark;
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+        background-color: white;
+        outline: none;
+        transition: background-color $transition, border-color $transition;
+
+        &:hover  {
+            background-color: $s-light; 
+        }
+
+        &:checked {
+            background-color: $p-light;
+            border-color: $p-light;
+        }
+    }
+
+    &__content-wrap {
+        @include flex(space-between);
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+            width: 100%;
+        }
+    }
+
+    &__name {
+        order: 2;
+        margin: $m-padding 0;
     }
 
     &__img {
-        width: 5rem;
+        order: 1;
+        width: 7rem;
     }
 
     &__qty {
         @include flex();
-        flex-direction: column;
+        background-color: $p-dark;
+        border-radius: 20px;
+        color: white;
+        order: 3;
+        gap: calc($m-padding / 2);
+
+        &-text {
+            margin: 0;
+        }
     }
 
     &__btn {
         width: 40px;
         padding: calc($m-padding / 3);
         border-radius: 20px;
+        font-size: 1rem;
     }
 }

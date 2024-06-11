@@ -40,19 +40,28 @@ function HomePage() {
           slidesPerView: 1,
           spaceBetween: 20,
         },
-        600: {
+        550: {
           slidesPerView: 2,
           spaceBetween: 30,
         },
-        1024: {
+        810: {
           slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 4,
           spaceBetween: 40,
         },
       },
       injectStyles: [
         `.swiper-button-next, 
           .swiper-button-prev {
-              color: black;
+              color: #195321;
+              transition: 0.25s;
+          }
+          .swiper-button-next:hover, 
+          .swiper-button-prev:hover {
+              color: #69995d;
           }
         `,
       ],
@@ -94,7 +103,7 @@ function HomePage() {
   return (
     <>
       <section className="slider-section">
-        <h2>Plant-Based Foods</h2>
+        <h2 className="slider-section__header">Plant-Based Foods</h2>
         <swiper-container ref={plantBasedSwiperRef} init="false">
           {products
             .filter((product) =>
@@ -113,7 +122,7 @@ function HomePage() {
                       alt="Plus Icon"
                     />
                   </div>
-                  <Link to={`/product/${product.id}`}>
+                  <Link to={`/product/${product.id}`} className="card__link">
                     <img
                       className="card__image"
                       src={`${baseUrl}/${product.product_image}`}
@@ -135,7 +144,7 @@ function HomePage() {
         </swiper-container>
       </section>
       <section className="slider-section">
-        <h2>Frozen Foods</h2>
+        <h2 className="slider-section__header">Frozen Foods</h2>
         <swiper-container ref={frozenFoodsSwiperRef} init="false">
           {products
             .filter((product) => product.categories.includes("Frozen Foods"))
@@ -152,7 +161,7 @@ function HomePage() {
                       alt="Plus Icon"
                     />
                   </div>
-                  <Link to={`/product/${product.id}`}>
+                  <Link to={`/product/${product.id}`} className="card__link">
                     <img
                       className="card__image"
                       src={`${baseUrl}/${product.product_image}`}
@@ -174,7 +183,7 @@ function HomePage() {
         </swiper-container>
       </section>
       <section className="slider-section">
-        <h2>Snacks</h2>
+        <h2 className="slider-section__header">Snacks</h2>
         <swiper-container ref={snacksSwiperRef} init="false">
           {products
             .filter((product) => product.categories.includes("Snacks"))
@@ -191,7 +200,7 @@ function HomePage() {
                       alt="Plus Icon"
                     />
                   </div>
-                  <Link to={`/product/${product.id}`}>
+                  <Link to={`/product/${product.id}`} className="card__link">
                     <img
                       className="card__image"
                       src={`${baseUrl}/${product.product_image}`}

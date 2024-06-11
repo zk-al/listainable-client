@@ -112,29 +112,29 @@ function ListPage() {
                   handleCheckbox(listItem.id);
                 }}
               />
-              <div className="list__product">
+              <div className="list__content-wrap">
+                <h2 className="list__name">{listItem.product_name}</h2>
                 <img
                   className="list__img"
                   src={`${baseUrl}/${listItem.product_image}`}
                   alt={listItem.product_name}
                 />
-                <h2>{listItem.product_name}</h2>
-              </div>
 
-              <div className="list__qty">
-                <button
-                  className="list__btn btn"
-                  onClick={() => increaseQty(listItem.id, listItem.quantity)}
-                >
-                  +
-                </button>
-                <p>{listItem.quantity}</p>
-                <button
-                  className="list__btn btn"
-                  onClick={() => decreaseQty(listItem.id, listItem.quantity)}
-                >
-                  -
-                </button>
+                <div className="list__qty">
+                  <button
+                    className="list__btn btn"
+                    onClick={() => increaseQty(listItem.id, listItem.quantity)}
+                  >
+                    +
+                  </button>
+                  <p className="list__qty-text">{listItem.quantity}</p>
+                  <button
+                    className="list__btn btn"
+                    onClick={() => decreaseQty(listItem.id, listItem.quantity)}
+                  >
+                    -
+                  </button>
+                </div>
               </div>
             </li>
           ))}

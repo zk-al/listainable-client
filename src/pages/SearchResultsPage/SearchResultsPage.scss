@@ -4,6 +4,12 @@
 
 .results {
     @include flex();
+    flex-wrap: wrap;
+    padding: $m-padding;
+
+    @include tablet {
+        padding: $d-padding;
+    }
 
     & .card {
         width: 300px;
