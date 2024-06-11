@@ -11,6 +11,7 @@
         margin-bottom: calc($d-padding * 4) ; 
     }
 }
+
 .card {
     @include flex();
     flex-direction: column;

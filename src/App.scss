@@ -1,0 +1,12 @@
+@use './styles/partials/mixins' as *;
+@use './styles/partials/variables' as *;
+
+.site-wrap {
+    @include flex(space-between, stretch);
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main {
+    flex-grow: 1;
+}

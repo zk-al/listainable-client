@@ -2,10 +2,8 @@ import "./HomePage.scss";
 import "../../styles/partials/_global.scss";
 import plusIcon from "../../assets/icons/plus-large-svgrepo-com.svg";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { register } from "swiper/element/bundle";
-import "swiper/css";
-import "swiper/css/navigation";
 import { Link } from "react-router-dom";
 
 const PORT = process.env.REACT_APP_API_PORT || 8080;
@@ -14,6 +12,10 @@ const baseUrl = `http://localhost:${PORT}`;
 register();
 
 function HomePage() {
+  const plantBasedSwiperRef = useRef(null);
+  const frozenFoodsSwiperRef = useRef(null);
+  const snacksSwiperRef = useRef(null);
+
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -27,6 +29,44 @@ function HomePage() {
     };
     getProducts();
   }, []);
+
+  const initSwiper = (swiperRef) => {
+    const swiperContainer = swiperRef.current;
+    const params = {
+      navigation: true,
+      loop: true,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        600: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+      },
+      injectStyles: [
+        `.swiper-button-next, 
+          .swiper-button-prev {
+              color: black;
+          }
+        `,
+      ],
+    };
+
+    Object.assign(swiperContainer, params);
+    swiperContainer.initialize();
+  };
+
+  useEffect(() => {
+    initSwiper(plantBasedSwiperRef);
+    initSwiper(frozenFoodsSwiperRef);
+    initSwiper(snacksSwiperRef);
+  }, [products]);
 
   const handleAdd = async (productId) => {
     // This will change to dynamically work depending on the user that is logged in
@@ -55,25 +95,7 @@ function HomePage() {
     <>
       <section className="slider-section">
         <h2>Plant-Based Foods</h2>
-        <swiper-container
-          slides-per-view="1"
-          navigation="true"
-          loop="true"
-          breakpoints='{
-            "320": {
-              "slidesPerView": 1,
-              "spaceBetween": 20
-            },
-            "600": {
-              "slidesPerView": 2,
-              "spaceBetween": 30
-            },
-            "1024": {
-              "slidesPerView": 3,
-              "spaceBetween": 40
-            }
-          }'
-        >
+        <swiper-container ref={plantBasedSwiperRef} init="false">
           {products
             .filter((product) =>
               product.categories.includes("Plant-based Foods")
@@ -114,25 +136,7 @@ function HomePage() {
       </section>
       <section className="slider-section">
         <h2>Frozen Foods</h2>
-        <swiper-container
-          slides-per-view="1"
-          navigation="true"
-          loop="true"
-          breakpoints='{
-            "320": {
-              "slidesPerView": 1,
-              "spaceBetween": 20
-            },
-            "600": {
-              "slidesPerView": 2,
-              "spaceBetween": 30
-            },
-            "1024": {
-              "slidesPerView": 3,
-              "spaceBetween": 40
-            }
-          }'
-        >
+        <swiper-container ref={frozenFoodsSwiperRef} init="false">
           {products
             .filter((product) => product.categories.includes("Frozen Foods"))
             .map((product) => (
@@ -171,25 +175,7 @@ function HomePage() {
       </section>
       <section className="slider-section">
         <h2>Snacks</h2>
-        <swiper-container
-          slides-per-view="1"
-          navigation="true"
-          loop="true"
-          breakpoints='{
-            "320": {
-              "slidesPerView": 1,
-              "spaceBetween": 20
-            },
-            "600": {
-              "slidesPerView": 2,
-              "spaceBetween": 30
-            },
-            "1024": {
-              "slidesPerView": 3,
-              "spaceBetween": 40
-            }
-          }'
-        >
+        <swiper-container ref={snacksSwiperRef} init="false">
           {products
             .filter((product) => product.categories.includes("Snacks"))
             .map((product) => (
