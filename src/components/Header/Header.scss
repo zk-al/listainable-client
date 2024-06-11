@@ -8,25 +8,45 @@
         @include flex(space-between);
         gap: $m-padding;
         padding: $m-padding;
+        flex-direction: column;
         
         @include tablet {
             @include desktop-container;
             gap: $d-padding;
             padding: $d-padding;
+            flex-direction: row;
         }
     }
 
     &__logo-wrap {
         @include flex();
         gap: $m-padding;
+        order: -1;
+
+        @include tablet {
+            order: 0;
+        }
+    }
+
+    &__logo {
+        margin: 0;
     }
 
     &__arrow {
         width: 1.5rem;
     }
 
+    &__nav {
+        order: -1;
+
+        @include tablet {
+            order: 0;
+        }
+    }
+
     &__list {
         @include flex();
         gap: $m-padding;
+        margin: 0;
     }
 }

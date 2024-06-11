@@ -30,11 +30,11 @@ function Header({ loginVisible, setLoginVisible }) {
             />
           )}
           <Link to="/">
-            <h1 className="logo">Listainable</h1>
+            <h1 className="header__logo">Listainable</h1>
           </Link>
         </div>
-        <SearchBar />
-        <nav>
+        <SearchBar className="header__search" />
+        <nav className="header__nav">
           <ul className="header__list">
             <li>
               <Link to="/list">
