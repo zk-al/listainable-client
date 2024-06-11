@@ -119,10 +119,11 @@ a {
 }
 
 input {
-    padding: calc($m-padding / 2);
+    padding: calc($m-padding / 1.5);
     border-radius: 20px;
     border: 0px solid ;
     @include m-copy();
+    font-family: "Petrona";
     background-color: white;
     width: 100%;
 
