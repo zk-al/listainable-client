@@ -101,7 +101,7 @@ function ListPage() {
   return (
     <>
       <section className="list">
-        <h1>MY LIST</h1>
+        <h1 className="list__header">MY LIST</h1>
         <ul className="list__list">
           {userList.map((listItem) => (
             <li className="list__item" key={listItem.id}>

@@ -3,9 +3,10 @@
 
 
 .results {
-    @include flex();
+    @include flex($align: flex-start);
     flex-wrap: wrap;
     padding: $m-padding;
+    margin:  calc($m-padding * 4) $m-padding; 
 
     @include tablet {
         padding: $d-padding;

@@ -6,7 +6,11 @@
     flex-direction: column;
     gap: $m-padding;
     flex-wrap: wrap;
-    margin: calc($m-padding * 2) 0;
+    margin:  calc($m-padding * 4) $m-padding; 
+    
+    &__header {
+        margin: 0; 
+    }
 
     &__list {
         @include flex();
