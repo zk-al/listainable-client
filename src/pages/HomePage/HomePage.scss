@@ -10,23 +10,30 @@
         margin-top: calc($d-padding * 4) ; 
         margin-bottom: calc($d-padding * 4) ; 
     }
+
+    &__header {
+        @include m-header;
+
+        @include tablet {
+            @include d-page-header
+        }
+    }
 }
 
 .card {
     @include flex();
     flex-direction: column;
-    border: 3px solid $p-light;
-    margin: $m-padding calc($m-padding * 3);
+    margin: calc($m-padding /2 );
     padding: $m-padding;
-    background-color: white;
+    background: white;
     border-radius: 20px;
     transition: $transition;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba($p-dark, 0.2) 0px 2px 8px 0px;
     overflow: hidden ;
     position: relative;
 
     &:hover {
-        box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
+        box-shadow: rgba($p-dark, 0.4) 0px 3px 8px;
     }
 
     &__add {

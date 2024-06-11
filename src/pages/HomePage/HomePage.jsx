@@ -40,12 +40,16 @@ function HomePage() {
           slidesPerView: 1,
           spaceBetween: 20,
         },
-        600: {
+        550: {
           slidesPerView: 2,
           spaceBetween: 30,
         },
-        1024: {
+        810: {
           slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 4,
           spaceBetween: 40,
         },
       },
@@ -99,7 +103,7 @@ function HomePage() {
   return (
     <>
       <section className="slider-section">
-        <h2>Plant-Based Foods</h2>
+        <h2 className="slider-section__header">Plant-Based Foods</h2>
         <swiper-container ref={plantBasedSwiperRef} init="false">
           {products
             .filter((product) =>
@@ -140,7 +144,7 @@ function HomePage() {
         </swiper-container>
       </section>
       <section className="slider-section">
-        <h2>Frozen Foods</h2>
+        <h2 className="slider-section__header">Frozen Foods</h2>
         <swiper-container ref={frozenFoodsSwiperRef} init="false">
           {products
             .filter((product) => product.categories.includes("Frozen Foods"))
@@ -179,7 +183,7 @@ function HomePage() {
         </swiper-container>
       </section>
       <section className="slider-section">
-        <h2>Snacks</h2>
+        <h2 className="slider-section__header">Snacks</h2>
         <swiper-container ref={snacksSwiperRef} init="false">
           {products
             .filter((product) => product.categories.includes("Snacks"))
