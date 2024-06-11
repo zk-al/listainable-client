@@ -37,12 +37,12 @@
     }
 
     &__add {
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         position: absolute;
         top: 10px;
         right: 10px;
-        z-index: 99;
+        z-index: 98;
         background-color: $p-dark;
         transition: $transition;
         border-radius: 50%;
@@ -54,16 +54,23 @@
         }
 
         &-icon {
-            width: 30px;
+            width: 20px;
         }
     }
 
     &__link {
         width: 100%;
+        @include flex();
+        flex-direction: column;
     }
 
     &__image{
         width: 10rem;
+        margin: $m-padding 0;
+
+        @include tablet {
+            margin: $d-padding 0;
+        }
     }
 
     &__text {
@@ -76,6 +83,10 @@
 
     &__name {
         @include section-header();
-        font-size: 1rem;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        text-align: center;
+        margin: 0;
+        width: 65%;
     }
 }

@@ -123,13 +123,13 @@ function HomePage() {
                     />
                   </div>
                   <Link to={`/product/${product.id}`} className="card__link">
+                    <h3 className="card__name">{product.product_name}</h3>
                     <img
                       className="card__image"
                       src={`${baseUrl}/${product.product_image}`}
                       alt={product.product_name}
                     />
                     <div className="card__text">
-                      <h3 className="card__name">{product.product_name}</h3>
                       <h4 className="eco-score">
                         Eco Score: {product.eco_score}
                       </h4>
@@ -162,13 +162,13 @@ function HomePage() {
                     />
                   </div>
                   <Link to={`/product/${product.id}`} className="card__link">
+                    <h3 className="card__name">{product.product_name}</h3>
                     <img
                       className="card__image"
                       src={`${baseUrl}/${product.product_image}`}
                       alt={product.product_name}
                     />
                     <div className="card__text">
-                      <h3 className="card__name">{product.product_name}</h3>
                       <h4 className="eco-score">
                         Eco Score: {product.eco_score}
                       </h4>
@@ -201,13 +201,13 @@ function HomePage() {
                     />
                   </div>
                   <Link to={`/product/${product.id}`} className="card__link">
+                    <h3 className="card__name">{product.product_name}</h3>
                     <img
                       className="card__image"
                       src={`${baseUrl}/${product.product_image}`}
                       alt={product.product_name}
                     />
                     <div className="card__text">
-                      <h3 className="card__name">{product.product_name}</h3>
                       <h4 className="eco-score">
                         Eco Score: {product.eco_score}
                       </h4>
