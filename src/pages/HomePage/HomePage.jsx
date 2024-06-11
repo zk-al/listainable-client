@@ -122,7 +122,7 @@ function HomePage() {
                       alt="Plus Icon"
                     />
                   </div>
-                  <Link to={`/product/${product.id}`}>
+                  <Link to={`/product/${product.id}`} className="card__link">
                     <img
                       className="card__image"
                       src={`${baseUrl}/${product.product_image}`}
@@ -161,7 +161,7 @@ function HomePage() {
                       alt="Plus Icon"
                     />
                   </div>
-                  <Link to={`/product/${product.id}`}>
+                  <Link to={`/product/${product.id}`} className="card__link">
                     <img
                       className="card__image"
                       src={`${baseUrl}/${product.product_image}`}
@@ -200,7 +200,7 @@ function HomePage() {
                       alt="Plus Icon"
                     />
                   </div>
-                  <Link to={`/product/${product.id}`}>
+                  <Link to={`/product/${product.id}`} className="card__link">
                     <img
                       className="card__image"
                       src={`${baseUrl}/${product.product_image}`}
