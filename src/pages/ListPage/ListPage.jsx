@@ -102,6 +102,8 @@ function ListPage() {
     <>
       <section className="list">
         <h1 className="list__header">MY LIST</h1>
+        <div className="eco-score">Average Eco Score: {averageScore}</div>
+
         <ul className="list__list">
           {userList.map((listItem) => (
             <li className="list__item" key={listItem.id}>
@@ -139,7 +141,6 @@ function ListPage() {
             </li>
           ))}
         </ul>
-        <div className="eco-score">Average Eco Score: {averageScore}</div>
       </section>
     </>
   );
